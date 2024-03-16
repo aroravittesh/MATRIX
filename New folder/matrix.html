@@ -1,0 +1,728 @@
+<html>
+    <head>
+        <title>
+            Matrix
+        </title>
+    </head>
+    <style type="text/css">
+        div.a{
+            background-color: black;
+            width: 1530px;
+            position: fixed;
+            height:22px;
+            top:0px;
+            color:white;
+            left:0px;
+            right:0px;
+            z-index:2;
+        }
+        div.f{
+            background-color: white;
+            width: 1230px;
+            height:65px;
+            position: absolute;
+            top:30px;
+            left:150px;
+            align-self: center;
+            z-index:2;
+            text-align:center;
+        }
+        a.o{
+            position: absolute;
+            font-size: 14px;
+            padding-top: 4px;
+            font-family: Arial, Helvetica, sans-serif;
+            margin-left: 500px;
+            text-align: center;
+            color: white;
+            text-decoration: none;
+            transition: 3.9s;                  
+
+        }
+        a.e{
+            position: absolute;
+            font-size: 14px;
+            padding-top: 4px;
+            font-family: Arial, Helvetica, sans-serif;
+            margin-left: 550px;
+            text-align: center;
+            color: white;
+            text-decoration: none;
+            display: none;
+        }
+        a.o:hover {
+            display: none;
+        }
+
+        a.o:hover + a.e {
+            display: inline-block; 
+        }
+        div.screen{
+            width: 1511px;
+            position:absolute;
+            height:700px;
+            top:0px;
+            display: inline-block;
+            right:0px;
+
+        }
+        div.screen div.left{
+            z-index: 0;
+            width: 760px;
+            position: absolute;
+            left:0px;
+            background-color: whitesmoke;
+            height:700px;
+        }
+        div.screen div.right{
+            width: 760px;
+            background-image: url(dev1.jpg);
+            position:absolute;
+            background-size:cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            right:0px;
+            height:700px;
+            text-align: center;
+        }
+        ul.x{
+            list-style: none;
+            position: absolute;
+            left: 570px;
+            top:9px;
+        }
+        ul.x li.a {
+    display: inline-block;
+    padding-right: 30px;
+    text-align: center;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative; /* Added position relative to the list item */
+}
+
+ul.x li.a div.y {
+    background-color: white;
+    height: 300px;
+    width: 600px;
+    left:-100;
+    top:39px;
+    display: none;
+    position: absolute;
+    z-index: 1;
+}
+
+ul.x li.a:hover div.y,
+ul.x li.a:hover + div.y {
+    display: block;
+    z-index: 2;
+    text-align: left;
+}
+
+        ul.x li.a div.y ul.q{
+            list-style: none;
+
+        }
+        ul.x li.a div.y ul.q li.t{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: black;
+        }
+        div.new{
+            position: absolute;
+            top:1620px;
+            height:500px;
+            width:1400px;
+            background-size:cover;
+            overflow: hidden;
+        }
+        div.circle{
+            height:52px;
+            width:52px;
+            background-color:rgb(31, 172, 211);
+            border-radius: 50%;
+            position: absolute;
+            top:240px;
+            left:733px;
+            z-index: 2;
+            text-align: center;
+            font-size: 45px;
+            color:white;
+        }
+        div.circle1{
+            height:52px;
+            width:52px;
+            background-color:rgb(31, 172, 211);
+            border-radius: 50%;
+            position: absolute;
+            top:330px;
+            left:733px;
+            z-index: 2;
+            text-align: center;
+            font-size: 45px;
+            color:white;
+        }
+        font.ax{
+            color:rgb(9, 9, 78);
+            position: absolute;
+            top:180px;
+            left:50px;
+            font-size: 55px;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        font.bc{
+            position: absolute;
+            top:180px;
+            left:220px;
+            font-size: 55px;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        div.smallbox{
+            background-color:rgb(31, 172, 211);
+            height:50px;
+            width:160px;
+            position: absolute;
+            left:50px;
+            top:400px;
+            border-radius: 5px;
+        }
+        div.strip{
+            background-color:rgb(31, 172, 211);
+            width:1519.5px;
+            height:100px;
+            top:600px;
+            left:0px;
+            position: absolute;
+        }
+        .form1{
+            position: absolute;
+            top:30px;
+            left:140px;
+        }
+        input.Z{
+            height:40px;
+            width:320px;
+            border-radius: 5px;
+            border: 0;
+        }
+        input.Z::placeholder{
+            position: absolute;
+            left:10px;
+        }
+        .form2{
+            position: absolute;
+            top:30px;
+            left:470px;
+        }
+        select.z{
+            height:40px;
+            width:320px;
+            border-radius: 5px;
+            border: 0;
+        }
+        select.z::option{
+                position: absolute;
+                left:10px;
+                color: grey;
+        }
+        .form3{
+            position: absolute;
+            top:30px;
+            left:800px;
+        }
+        input.z1{
+            height:40px;
+            width:320px;
+            border-radius: 5px;
+            border: 0;
+        }
+        .searchbox{
+            background-color: rgb(6, 6, 78);
+            height:40px;
+            width:200px;
+            position: absolute;
+            top:30px;
+            left:1130px;
+            border-radius: 3px;
+        }
+        .xo{
+            background-color: rgb(31, 172, 211);
+            height:40px;
+            width:130px;
+            position: absolute;
+            right:20px;
+            top:15px;
+            border-radius: 4px;
+        }
+        .xo:hover{
+            background-color: rgb(9, 9, 78);
+            transform: scale(0.9);
+        }
+        div.secondp{
+            width: 1519px;
+            position:absolute;
+            height:700px;
+            top:700px;
+            background-color: white;
+            right:0px;
+
+        }
+        div.portal{
+            display: grid;
+            background-color: white;
+            position: absolute;
+            top:100px;
+            width:1489.3px;
+            height:500px;
+            left:15px;
+            right:15px;
+            grid-gap: 40px;
+            grid-template-columns: auto auto auto auto;
+            border: 1px solid skyblue;
+            border-style: groove;
+        }
+        div.items{
+            background-color: rgba(159, 228, 240, 0.227);
+            /*background-color: blue;*/
+            border-radius: 2px;
+            text-align: center;
+            margin: 0px;
+        }
+        div.items div.content1{
+            background-color: white;
+            border-style:groove;
+            position: relative;
+            top:20px; 
+            left:30px;
+            height:185px;
+            border-color:skyblue;
+            width:280px;
+            border-radius: 2px;
+        }
+        .im{
+            position: relative;
+            top:0px;
+            height:180px;
+            width:100%;
+            transition: all 0.3s ease;
+        }
+        .p2s{
+           /* color: rgb(9, 9, 78);*/
+            color:white;
+            font-size: 40px;
+            position:absolute;
+            top:13px;
+            font-family:fantasy;
+            left:440px;
+            z-index: 1;
+        }
+        .strip2{
+            position: absolute;
+            background-color:rgb(31, 172, 211);
+            height:80px;
+            width:1519.25px;
+            top:620px;
+        }
+    .sw {
+        position: relative;
+        top: 13px;
+        left: 0;
+        height: 55px;
+        width: 0; /* Start with zero width */
+        background-color: rgb(9, 9, 78);
+        animation: marquee 6s linear infinite;
+        white-space: nowrap;
+        overflow: hidden;
+        float: left;
+        margin-right: 30px;
+    }
+
+    @keyframes marquee {
+        0% { width: 0; } /* Start with zero width */
+        25% { width: calc(100%); } /* Cover most of the width (subtracting margins and other content) */
+       /* 75% { width: calc(100%); } /* Maintain width for a moment */
+        100% { width: 0; } /* Return to zero width */
+    }
+    .page3{
+        position: absolute;
+        top:1410px;
+        background-color:rgb(9, 9, 78) ;
+        height:700px;
+        width:1519px;
+        left:0;
+    }
+    .smal{
+        position: absolute;
+        top:20px;
+        width:100%; 
+        /*background-color: rgba(9, 9, 78, 0.315);*/
+        background-color: rgb(9, 9, 78);
+        color:white;
+        font-family: Arial, Helvetica, sans-serif;
+        height: 100px;
+    }
+    .smalf{
+        position: absolute;
+        top:20px;
+        left:150px;
+        font-size: 30px;
+    }
+    .smal .por {
+    display: grid;
+    background-color: rgb(73, 73, 161);
+    position: absolute;
+    top: 100px;
+    color: rgb(9, 9, 78);
+    width: auto;
+    border-radius: 10px;
+    height: 130px;
+    left: 150px; /* corrected the value */
+    right: 230px;
+    grid-gap: 10px; /* Adjust the gap as per your requirement */
+    grid-template-columns: auto auto auto auto;
+}
+
+.cont1 {
+    background-color: rgb(9, 9, 78);
+    height: 120px;
+    width: 200px;
+    position: relative;
+    top:5px;
+    left:40px;
+    float: left;
+    margin: 0; /* Ensure no margin */
+    padding: 0; /* Ensure no padding */
+    /* If necessary, adjust other styles like top, left, and float */
+}
+.smal .por .cont1:hover {
+    transform: scale(0.9);
+}
+.login{
+    top:0px;
+    height:20px;
+    background-color: black;
+    position: fixed;
+    width:1519px;
+    z-index: 4;
+    left:0px;
+    text-align: center;
+    color:white;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: small;
+    vertical-align: middle;
+
+}
+.end{
+    position: absolute;
+    top:771px;
+    height:400px;
+    width:1512px;
+    background-color: rgb(9, 9, 78);
+    display: grid;
+    left:0px;
+    border-top: 2px solid rgb(31, 172, 211);
+    border-style: groove;
+}
+.end1{
+    /*background-color: rgb(73, 73, 161);*/
+    background-color: rgb(9, 9, 78);
+    height:300px;
+    position: absolute;
+    top:40px;
+    left:100px;
+    color:white;
+    width:150px;
+    text-align: left;
+    border-right: 2px solid white;
+}
+.end2{
+    background-color: rgb(9, 9, 78);
+    height:300px;
+    position: absolute;
+    top:40px;
+    left:450px;
+    color:white;
+    width:150px;
+    text-align: left;
+}
+.end3{
+    background-color: rgb(9, 9, 78);
+    height:300px;
+    position: absolute;
+    top:40px;
+    left:760px;
+    color:white;
+    width:150px;
+    text-align: left;
+    border-left: 2px solid white;
+}
+.end4{
+    background-color: rgb(9, 9, 78);
+    height:300px;
+    position: absolute;
+    top:40px;
+    left:1100px;
+    color:white;
+    width:150px;
+    text-align: left;
+    border-left: 2px solid white;
+}
+.brand-strip{
+    position: absolute;
+    top:701px;
+    left:0px;
+    height:70px;
+    width:100%;
+    background-color: black;
+    z-index: 5;
+}
+.brand-strip {
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.brand-list {
+    display: inline-block;
+    margin-bottom: 10px;
+    padding-left: 100%; /* Push content to the right */
+    animation: marquee 40s linear infinite; /* Adjust duration */
+}
+
+.brand-list li {
+    display: inline;
+    margin-right: 30px;
+    vertical-align: middle;
+     /* Adjust spacing between brand names */
+    font-size: 40px; /* Adjust font size */
+    color: white; /* Gray color */
+}
+
+@keyframes marquee {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-100%); }
+}
+    </style>
+    <body style="background-color: white">
+        <div class="login"><a href="http://127.0.0.1:5501/matrix1.html" style="text-decoration: none; color:white; margin-right: 7px; margin-top: 5px;">SIGN UP<span style="margin: 0 5px;">/</span>SIGN IN</a></div>
+       <!-- <div class="a">
+            <a class="o" href="#">Save up to ₹8000.00 instantly on eligible products with HDFC Bank Credit Cards. Shop now</a>
+            <a class="e" href="#">Plus No Cost EMI from most leading banks. Shop now</a>
+        </div>-->
+        <div class="f">
+            <!--<img class="makaan" src="makaan.png" alt="image" style="position: absolute; left:0px;" height="65px">-->
+            <h1><font color="rgb(9, 9, 78)" style=" position:absolute ; left:20px; top:10px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size: larger;">MATRIX</font></h1>
+            <ul class="x">
+                <li class="a">
+                <a class="xy" href="http://127.0.0.1:5501/matrix.html" style="text-decoration: none; color:rgb(31, 172, 211);"> HOME </a>
+                    <!--<div class="y">
+                        <ul class="q">
+                            <li class="t"></li>
+                            <br>
+                            <li class="t"></li>
+                        </ul>
+                    </div>-->
+                </li>
+                <li class="a"><a class="xy" href="#" style="text-decoration: none; color:black;"> ABOUT </a>
+                    <div class="y">
+                        <ul class="q">
+                            <br>
+                            <br>
+                            <li class="t"></li>
+                            <br>
+                            <li class="t"></li>
+                        </ul>
+                    </div></li>
+                <li class="a"><a class="xy" href="#" style="text-decoration: none; color:black;"> DEVICES </a>
+                    <div class="y">
+                        <ul class="q">
+                            <br>
+                            <li class="t">Laptops</li>
+                            <li class="t">Watches</li>
+                            <li class="t">iPad</li>
+                            <li class="t">Mac</li>
+                            <li class="t">iPhones</li>
+                            <li class="t">Speakers</li>
+                        </ul>
+                    </div></li>
+               <!-- <li class="a"> <a class="xy" href="http://127.0.0.1:5501/MouseOverOut.html" style="text-decoration: none; color:black"> PAGES </a>
+                    <div class="y">
+                        <ul class="q">
+                            <br>
+                            <br>
+                            <li class="t"></li>
+                            <br>
+                            <li class="t"></li>
+                        </ul>
+                    </div></li>-->
+                <li class="a"><a class="xy" href="#" style="text-decoration: none; color:black;">TERMS & CONDITIONS</a>
+
+                    <!--<div class="y">
+                        <ul class="q">
+                            <br>
+                            <br>
+                            <li class="t"></li>
+                            <br>
+                            <li class="t"></li>
+                        </ul>
+                    </div>--></li>
+            </ul>
+            <div class="xo"><font color="white" style="position: absolute; top:9px; left:20px; font-family:Arial, Helvetica, sans-serif;">Add Product</font></div>
+        </div>
+        <div class="circle"><a href="#"><font color="white" style="position: absolute; bottom: 0px; right: 3px; ">⬅</font></a></div>
+        <div class="circle1"><a href="#"><font color="white" style="position: absolute; bottom: 0px; right: 3px; text-decoration: none;">➡</font></a></div>
+        <div class="screen">
+            <div class="left">
+               <font class="ax">One&nbsp;Stop</font>
+               <font  class="bc" style="color:rgb(31, 172, 211);">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Place</font>
+               <font  class="bc" style="color:rgb(9, 9, 78) ;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To fullfill</font>
+               <font style="color:rgb(9, 9, 78); position: absolute; top:245px; left:50px; font-size: 55px; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif"> your electronics needs</font>
+               <font style="color:rgba(9, 9, 78, 0.482); font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; left:50px; position: absolute; top:325px;">Vero elitr justo clita lorem. Ipsum dolor at sed stet sit diam no. Kasd rebum &<br> ipsum at diam justo clita et kasd rebum sea elitr</font>
+            <div class="smallbox"><center><font color="white" style="font-family:Arial, Helvetica, sans-serif; position: absolute; top:16px; left:38px;">Get Started</font></center> </div>
+            </div>
+            <div class="right">
+            </div>
+        </div>
+        <div class="strip">
+            <form class="form1">
+                <input class="Z" type="text" id="search" placeholder="Search Keyword">
+            </form>
+            <form class="form2">
+                <!--<input class="z" type="">-->
+            <select class="z" name="sel">
+            <option disabled selected value="">Choose device</option>
+            <option>iPhone</option>
+            <option>Watch</option>
+            <option>Headphone</option>
+            <option>PC</option>
+            <option>Laptop</option>
+            <option>Mac</option>
+            <option>Ipad</option>
+        </select>
+            </form>
+            <form class="form3">
+                <select class="z" name="sel">
+                    <option disabled selected value="">Price Range</option>
+                    <option>5000 - 15000</option>
+                    <option>15000 - 30000</option>
+                    <option>30000 - 45000</option>
+                    <option>45000 - 60000</option>
+                    <option>60000 - 75000</option>
+                    <option>75000 - 100000</option>
+                    <option>100000 - 200000</option>
+                </select>
+            </form>
+            <div class="searchbox">
+                <font color="white" style="font-family:Arial, Helvetica, sans-serif; top:10px; left:75px; position: absolute;">Search</font>
+            </div>
+        </div>
+      <!--  <div class="new">
+           
+        </div>-->
+        <!--        SECOND PAGE         -->
+        <div class="secondp">
+            <br><br>
+            <center><font style="color:rgba(2, 2, 61, 0.482); font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Eirmod sed ipsom dolor sit rebum labore magna erat. Tempor ut dolore lorem kasd &<br>&nbsp;&nbsp; vero ipsum sit eirmod sit. Ipsum diam justo sed rebum vero dolor duo.</font></center>
+            <br>
+            <br>
+            <div class="portal">
+                <div class="items">
+                   <div class="content1" style="background-image:url(phone2.png); background-size: cover; background-repeat: no-repeat;">
+                   <!-- <font color="rgb(9, 9, 78)" style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; position: absolute; bottom:8px;"></font>
+                    <font style="font-family:Arial, Helvetica, sans-serif; color:rgb(127, 207, 184);">Iphone</font> -->
+                </div>
+                </div>
+                <div class="items">
+                    <div class="content1" style="background-image:url(headp1.png); background-size:contain; background-repeat: no-repeat;"></div>
+                </div>
+                <div class="items"><div class="content1" style="background-image:url(lappy.png); background-size: cover; background-repeat: no-repeat;"></div></div>
+                <div class="items"><div class="content1" style="background-image:url(apwatch.png); background-size: contain; background-repeat: no-repeat;"></div></div>
+                <div class="items"><div class="content1" style="background-image:url(pc.png); background-size: cover; background-repeat: no-repeat;"></div></div>
+                <div class="items"><div class="content1" style="background-image:url(ear2.png); background-size: cover; background-repeat: no-repeat;"></div></div>
+                <div class="items"><div class="content1" style="background-image:url(projec.png); background-size:cover; background-repeat: no-repeat; background-color: rgb(255, 255, 255);"></div></div>
+                <div class="items"><div class="content1" style="background-image:url(ipad.png); background-size: contain; background-repeat: no-repeat;"></div></div>
+
+            </div>
+            <div class="strip2"><font class="p2s">Customer Satisfaction is the Priority</font>
+                <div class="sw"></div>
+            </div>
+        </div>
+        <!--          Third Page          -->
+        <div class="page3">
+            <div class="smal">
+                <font class="smalf">For Your Budget</font>
+                <div class="por">
+                    <div class="cont1" style="background-image: url(r1.png); background-repeat: no-repeat; background-size: contain;"></div>
+                    <div class="cont1" style="background-image: url(r2.png); background-repeat: no-repeat; background-size: contain;"></div>
+                    <div class="cont1" style="background-image: url(r3.png); background-repeat: no-repeat; background-size: contain;"></div>
+                    <div class="cont1" style="background-image: url(r4.png); background-repeat: no-repeat; background-size: contain;"></div>
+                </div>
+            </div>
+            <hr style="background-color: white; height:1px; width:1515px; position: absolute; top:250px;">
+            <div class="lp"></div>
+            <div class="brand-strip">
+                <ul class="brand-list">
+                    <li>Apple</li>
+                    <li>Samsung</li>
+                    <li>Sony</li>
+                    <li>LG</li>
+                    <li>HP</li>
+                    <li>Dell</li>
+                    <li>Canon</li>
+                    <li>Nikon</li>
+                    <li>Bose</li>
+                    <li>Sennheiser</li>
+                    <li>Microsoft</li>
+                    <li>Lenovo</li>
+                    <li>ASUS</li>
+                    <li>Panasonic</li>
+                    <li>JBL</li>
+                    <li>Philips</li>
+                    <li>Logitech</li>
+                </ul>
+            </div>
+            <div class="end">
+                <div class="end1">
+                    <ul style="list-style: none; text-align: left;">
+                        <li><a href="#" style="text-decoration: none; color:white;">Get Started</a></li><br>
+                        <li><a href="#" style="text-decoration: none; color:white;">Guarantee</a></li><br>
+                        <li><a href="#" style="text-decoration: none; color:white;">Bidding Tips</a></li><br>
+                        <li><a href="#" style="text-decoration: none; color:white;">Matrix Stores</a></li>
+                    </ul>
+                </div>
+                <div class="end2">
+                    <ul style="list-style: none; text-align: left;">
+                        <li><a href="#"style="text-decoration: none; color:rgb(31, 172, 211);;">Start Selling</a></li><br>
+                        <li><a href="#"style="text-decoration: none; color:white;">Seller Tools</a></li><br>
+                        <li><a href="#"style="text-decoration: none; color:white;">Matrix Affiliates</a></li><br>
+                        <li><a href="#"style="text-decoration: none; color:white;">App Development</a></li><br>
+                        <li><a href="#"style="text-decoration: none; color:white;">Tools & Apps</a></li><br>
+                        <li><a href="#"style="text-decoration: none; color:white;">Security Center</a></li><br>
+                        <li><a href="#"style="text-decoration: none; color:white;">Matrix Affiliates</a></li><br>
+                        <li><a href="#"style="text-decoration: none; color:white;">Site Map</a></li>
+                    </ul>
+                </div>
+                <div class="end3">
+                    <ul style="list-style: none; text-align: left;">
+                        <li><a href="#"style="text-decoration: none; color:rgb(31, 172, 211);;">Stay Connected</a></li><br>
+                        <li><a href="#"style="text-decoration: none; color:white;">Matix Blogs</a></li><br>
+                        <li><a href="#"style="text-decoration: none; color:white;">Facebook</a></li><br>
+                        <li><a href="#"style="text-decoration: none; color:white;">Twitter</a></li><br>
+                    </ul>
+                </div>
+                <div class="end4">
+                    <ul style="list-style: none; text-align: left;">
+                        <li><a href="#"style="text-decoration: none; color:rgb(31, 172, 211);;">About Matrix</a></li><br>
+                        <li><a href="#"style="text-decoration: none; color:white;">Site Info</a></li><br>
+                        <li><a href="#"style="text-decoration: none; color:white;">Policies</a></li><br>
+                        <li><a href="#"style="text-decoration: none; color:white;">Advertise with us</a></li><br>
+                    </ul>
+                </div>
+
+            </div>
+
+
+
+
+
+
+        </div>
+    </body>
+</html>

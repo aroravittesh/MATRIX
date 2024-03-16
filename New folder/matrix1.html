@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login / Sign Up</title>
+    <style>
+        /* Your CSS styles for the login/signup form */
+        /* ... */
+        /* CSS styles for the login/signup form */
+
+        .popup-form-container {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #ffffff;
+            padding: 20px;
+            border: 1px solid #cccccc;
+            width: 300px;
+            z-index: 3;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .popup-form-container h2 {
+            text-align: center;
+            color: #09194e; /* Match your website's heading color */
+        }
+
+        .popup-form-container label {
+            display: block;
+            margin-bottom: 10px;
+            color: #09194e; /* Match your website's text color */
+        }
+
+        .popup-form-container input[type="text"],
+        .popup-form-container input[type="password"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+        }
+
+        .popup-form-container .btn {
+            width: 100%;
+            background-color: #0ba0e9; /* Match your website's button color */
+            color: #ffffff;
+            padding: 10px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .popup-form-container .btn.cancel {
+            background-color: #cccccc;
+            color: #09194e; /* Match your website's text color */
+        }
+
+        .error-message {
+            color: red;
+            margin-top: 5px;
+            text-align: center;
+        }
+
+        .toggle-button {
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+    <script>
+        // JavaScript functions for the pop-up form
+        function toggleForm() {
+            var popup = document.getElementById("popupForm");
+            popup.style.display = "block";
+        }
+
+        function closeForm() {
+            var popup = document.getElementById("popupForm");
+            popup.style.display = "none";
+        }
+
+        function loginClicked() {
+            // Dummy login credentials
+            var storedEmail = "ridam112004@gmail.com";
+            var storedPassword = "12345678";
+
+            // Retrieve input values
+            var emailInput = document.getElementById("loginEmail").value;
+            var passwordInput = document.getElementById("loginPassword").value;
+
+            // Check if the provided credentials match the stored credentials
+            if (emailInput === storedEmail && passwordInput === storedPassword) {
+                // Redirect to main page or perform desired action
+                alert("Login Successful!");
+                window.location.href = "http://127.0.0.1:5501/matrix.html"; // Redirect to the main page
+            } else {
+                // Display error message
+                var errorMessage = document.getElementById("errorMessage");
+                errorMessage.textContent = "Incorrect email or password. Please try again.";
+            }
+        }
+
+        function signUpClicked() {
+            // Retrieve input values
+            var emailInput = document.getElementById("signUpEmail").value;
+            var passwordInput = document.getElementById("signUpPassword").value;
+
+            // Check if password meets the length requirement
+            if (passwordInput.length >= 8) {
+                // Redirect to main page or perform desired action
+                alert("Sign Up Successful! Please log in to continue.");
+                window.location.href = "http://127.0.0.1:5501/matrix.html"; // Redirect to the main page
+            } else {
+                // Display error message
+                var errorMessage = document.getElementById("errorMessage");
+                errorMessage.textContent = "Password must be at least 8 characters long.";
+            }
+        }
+
+        function toggleSignUp() {
+            var loginForm = document.getElementById("loginForm");
+            var signUpForm = document.getElementById("signUpForm");
+            var toggleButton = document.getElementById("toggleButton");
+
+            if (loginForm.style.display === "block") {
+                loginForm.style.display = "none";
+                signUpForm.style.display = "block";
+                toggleButton.textContent = "Already have an account? Log In";
+            } else {
+                loginForm.style.display = "block";
+                signUpForm.style.display = "none";
+                toggleButton.textContent = "Don't have an account? Sign Up";
+            }
+        }
+
+        // Call toggleForm() function when the page loads
+        window.onload = function() {
+            toggleForm();
+        };
+    </script>
+</head>
+<body>
+    <!-- Sign up / Login form -->
+    <div id="popupForm" class="popup-form-container">
+        <h2>Sign Up / Login</h2>
+        <form id="loginForm" class="form-container">
+            <label for="loginEmail">Email</label>
+            <input type="text" id="loginEmail" name="loginEmail" placeholder="Enter Email" required>
+
+            <label for="loginPassword">Password</label>
+            <input type="password" id="loginPassword" name="loginPassword" placeholder="Enter Password" required>
+
+            <button type="button" class="btn" onclick="loginClicked()">Log In</button>
+        </form>
+        
+        <form id="signUpForm" class="form-container" style="display: none;">
+            <label for="signUpEmail">Email</label>
+            <input type="text" id="signUpEmail" name="signUpEmail" placeholder="Enter Email" required>
+
+            <label for="signUpPassword">Password</label>
+            <input type="password" id="signUpPassword" name="signUpPassword" placeholder="Enter Password" required>
+
+            <button type="button" class="btn" onclick="signUpClicked()">Sign Up</button>
+        </form>
+
+        <div id="errorMessage" class="error-message"></div>
+
+        <div class="toggle-button">
+            <button id="toggleButton" onclick="toggleSignUp()">Don't have an account? Sign Up</button>
+        </div>
+    </div>
+</body>
+</html>
